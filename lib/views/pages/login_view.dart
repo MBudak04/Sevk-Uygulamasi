@@ -1,5 +1,4 @@
 // ignore_for_file: void_checks
-import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:neden_sevk_application/core/services/http_services.dart';
 import 'package:neden_sevk_application/views/themes/colors.dart';
@@ -27,13 +26,8 @@ class _LoginViewState extends State<LoginView> {
   @override
   void initState()  {
     super.initState();
-    var connectivityResult =  (Connectivity().checkConnectivity());
-if (connectivityResult == ConnectivityResult.mobile || connectivityResult == ConnectivityResult.wifi) {
-  print("internet var");
-} else {
-  print("İNTERNET YOK");
-}
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
