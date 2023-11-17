@@ -3,7 +3,8 @@ import 'package:neden_sevk_application/views/themes/colors.dart';
 import 'package:neden_sevk_application/views/themes/fonts.dart';
 import 'package:neden_sevk_application/views/widgets/elevated_button_stadium.dart';
 import 'package:neden_sevk_application/views/widgets/sevk_islemler_baslik.dart';
-import 'package:neden_sevk_application/views/widgets/sevk_islemleri_radio_list.dart';
+import 'package:neden_sevk_application/views/widgets/sevk_islemleri_radio_firmalar.dart';
+import 'package:neden_sevk_application/views/widgets/sevk_islemleri_radio_sevk_personeller.dart';
 
 class SevkOlustur extends StatefulWidget {
   const SevkOlustur({super.key});
@@ -42,17 +43,17 @@ class _SevkOlusturState extends State<SevkOlustur> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SevkIslemlerBaslik(baslik: "SEVK EDEN FİRMA"),
-                const SevkIslemlerRadio(),
+                const SevkIslemlerRadioFirmalar(),
                 const SevkIslemlerBaslik(baslik: "SEVK EDEN PERSONEL"),
-                const SevkIslemlerRadio(),
+                const SevkIslemlerRadioSevkPersoneller(),
                 const SevkIslemlerBaslik(baslik: "TESLİM ALAN FİRMA"),
-                const SevkIslemlerRadio(),
+                const SevkIslemlerRadioFirmalar(),
                 const SevkIslemlerBaslik(baslik: "TESLİM ALAN PERSONEL"),
-                const SevkIslemlerRadio(),
+                const SevkIslemlerRadioSevkPersoneller(),
                 const SevkIslemlerBaslik(baslik: "İŞLEM"),
-                const SevkIslemlerRadio(),
+                const SevkIslemlerRadioSevkPersoneller(),
                 const SevkIslemlerBaslik(baslik: "E-İRSALİYE KESİLECEK Mİ?"),
-                const SevkIslemlerRadio(),
+                const SevkIslemlerRadioSevkPersoneller(),
                 StadiumElevatedButton(
                     yazi: "SEVK OLUŞTUR",
                     renk: NedenColors.lacivert,

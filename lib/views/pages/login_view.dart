@@ -140,7 +140,8 @@ class _LoginViewState extends State<LoginView> {
                                   yazi: "VAZGEÇ",
                                   font: NedenFonts.metin1,
                                   onPressed: () {
-                                    Navigator.pop(context);
+                                   // Navigator.pop(context);
+                                   Navigator.pushNamed(context, "/HomeView");
                                   })
                             ],
                           ),

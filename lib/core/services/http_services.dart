@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:neden_sevk_application/core/feature/remember_me.dart';
 import 'package:neden_sevk_application/core/models/firmalar_model.dart';
 import 'package:neden_sevk_application/core/models/sevk_bekleyen_cuvallar_model.dart';
+import 'package:neden_sevk_application/core/models/sevk_eden_personeller.dart';
 import 'package:neden_sevk_application/core/services/api_endpoints.dart';
 import 'package:neden_sevk_application/core/services/api_keys.dart';
 import 'package:neden_sevk_application/views/widgets/snackbar_content.dart';
@@ -81,7 +82,7 @@ class ApiServices {
     } catch (e) {
       // ignore: use_build_context_synchronously
      SnackBarMessage.showSnackBarError(context, "$e");
-     throw Exception("GÜNCEL VERİLER ÇEKİLEMEDİ");
+     throw Exception(e);
      
     }
   }
@@ -96,6 +97,28 @@ class ApiServices {
         if(response.statusCode == 200){
           Iterable list = jsonDecode(response.body);
           return List<FirmalarModel>.from(list.map((e) => FirmalarModel.fromJson(e)));
+        }else{
+          // ignore: use_build_context_synchronously
+          SnackBarMessage.showSnackBarError(context, "FİRMALAR VERİTABANINDAN ALINAMADI");
+          throw Exception("FİRMALAR VERİTABANINDAN ALINAMADI");
+        }
+
+      }catch(e){
+        // ignore: use_build_context_synchronously
+        SnackBarMessage.showSnackBarError(context, "$e");
+        throw Exception("CATCH : $e");
+      }
+  }
+
+
+
+    Future<List<SevkEdenPersonellerModel>> sevkEdenPersonellerService(BuildContext context) async {
+      try{
+        final response = await http.get(Uri.parse(ApiEndpoints.sevkEdenPersoneller));
+
+        if(response.statusCode == 200){
+          Iterable list = jsonDecode(response.body);
+          return List<SevkEdenPersonellerModel>.from(list.map((e) => SevkEdenPersonellerModel.fromJson(e)));
         }else{
           // ignore: use_build_context_synchronously
           SnackBarMessage.showSnackBarError(context, "FİRMALAR VERİTABANINDAN ALINAMADI");

@@ -5,14 +5,14 @@ import 'package:neden_sevk_application/core/services/http_services.dart';
 import 'package:neden_sevk_application/views/themes/colors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class SevkIslemlerRadio extends StatefulWidget {
-  const SevkIslemlerRadio({super.key});
+class SevkIslemlerRadioFirmalar extends StatefulWidget {
+  const SevkIslemlerRadioFirmalar({super.key});
 
   @override
-  State<SevkIslemlerRadio> createState() => _SevkIslemlerRadioState();
+  State<SevkIslemlerRadioFirmalar> createState() => _SevkIslemlerRadioState();
 }
 
-class _SevkIslemlerRadioState extends State<SevkIslemlerRadio> {
+class _SevkIslemlerRadioState extends State<SevkIslemlerRadioFirmalar> {
   List<String> list = [];
   List<String> searchList = [];
   String selectedIndex = "";
@@ -66,7 +66,7 @@ class _SevkIslemlerRadioState extends State<SevkIslemlerRadio> {
                       hintText: "Ara...",
                       trailing: const [Icon(Icons.search)],
                       onChanged: (value) {
-                            Timer(const Duration(milliseconds: 800), () {
+                            Timer(const Duration(milliseconds: 1200), () {
                           setState(() {});
                           searchList = list
                               .where(
