@@ -1,20 +1,19 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:neden_sevk_application/core/models/sevk_eden_personeller.dart';
+import 'package:neden_sevk_application/core/models/islemler_model.dart';
 import 'package:neden_sevk_application/core/services/http_services.dart';
 import 'package:neden_sevk_application/views/themes/colors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class SevkIslemlerRadioSevkPersoneller extends StatefulWidget {
-  const SevkIslemlerRadioSevkPersoneller({super.key});
+class SevkIslemlerRadioIslemler extends StatefulWidget {
+  const SevkIslemlerRadioIslemler({super.key});
 
   @override
-  State<SevkIslemlerRadioSevkPersoneller> createState() => _SevkIslemlerRadioState();
+  State<SevkIslemlerRadioIslemler> createState() => _SevkIslemlerRadioState();
 }
 
-class _SevkIslemlerRadioState extends State<SevkIslemlerRadioSevkPersoneller> {
+class _SevkIslemlerRadioState extends State<SevkIslemlerRadioIslemler> {
   List<String> list = [];
-  List<String> list2 = [];
   List<String> searchList = [];
   String selectedIndex = "";
   TextEditingController controllerSear = TextEditingController();
@@ -94,8 +93,8 @@ class _SevkIslemlerRadioState extends State<SevkIslemlerRadioSevkPersoneller> {
                     child: Column(
                       children: [
                         Expanded(
-                          child: FutureBuilder<List<SevkEdenPersonellerModel>>(
-                            future: apiServices.sevkEdenPersonellerService(context),
+                          child: FutureBuilder<List<IslemlerModel>>(
+                            future: apiServices.islemlerService(context),
                             builder: (context, snapshot) {
                               if (snapshot.connectionState ==
                                   ConnectionState.waiting) {
@@ -107,19 +106,18 @@ class _SevkIslemlerRadioState extends State<SevkIslemlerRadioSevkPersoneller> {
                                   child: Text("HATA: ${snapshot.error}"),
                                 );
                               } else {
-                                List<SevkEdenPersonellerModel> sevkPersonellerListesi =
+                                List<IslemlerModel> islemlerListesi =
                                     snapshot.data!;
-                                for (var personeller in sevkPersonellerListesi) {
+                                for (var islemler in islemlerListesi) {
                                   if (!list
                                       // ignore: unrelated_type_equality_checks
-                                      .any((element) => element == personeller)) {
-                                    list.add(personeller.personelAdi!);
-                                    list2.add(personeller.personelSoyadi!);
+                                      .any((element) => element == islemler)) {
+                                    list.add(islemler.islem!);
                                   }
                                 }
                                 return ListView.builder(
                                     itemCount: searchList.isEmpty
-                                        ? sevkPersonellerListesi.length
+                                        ? islemlerListesi.length
                                         : searchList.length,
                                     itemBuilder: (context, index) {
                                       // FirmalarModel firma = firmalarListesi[index];

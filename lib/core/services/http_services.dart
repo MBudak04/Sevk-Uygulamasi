@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:neden_sevk_application/core/feature/remember_me.dart';
 import 'package:neden_sevk_application/core/models/firmalar_model.dart';
+import 'package:neden_sevk_application/core/models/islemler_model.dart';
 import 'package:neden_sevk_application/core/models/sevk_bekleyen_cuvallar_model.dart';
 import 'package:neden_sevk_application/core/models/sevk_eden_personeller.dart';
 import 'package:neden_sevk_application/core/services/api_endpoints.dart';
@@ -132,7 +133,25 @@ class ApiServices {
       }
   }
 
+    Future<List<IslemlerModel>> islemlerService(BuildContext context) async {
+      try{
+        final response = await http.get(Uri.parse(ApiEndpoints.islemler));
 
+        if(response.statusCode == 200){
+          Iterable list = jsonDecode(response.body);
+          return List<IslemlerModel>.from(list.map((e) => IslemlerModel.fromJson(e)));
+        }else{
+          // ignore: use_build_context_synchronously
+          SnackBarMessage.showSnackBarError(context, "İŞLEMLER VERİTABANINDAN ALINAMADI");
+          throw Exception("İŞLEMLER VERİTABANINDAN ALINAMADI");
+        }
+
+      }catch(e){
+        // ignore: use_build_context_synchronously
+        SnackBarMessage.showSnackBarError(context, "$e");
+        throw Exception("CATCH : $e");
+      }
+  }
 
 
 

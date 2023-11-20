@@ -4,7 +4,9 @@ import 'package:neden_sevk_application/views/themes/fonts.dart';
 import 'package:neden_sevk_application/views/widgets/elevated_button_stadium.dart';
 import 'package:neden_sevk_application/views/widgets/sevk_islemler_baslik.dart';
 import 'package:neden_sevk_application/views/widgets/sevk_islemleri_radio_firmalar.dart';
+import 'package:neden_sevk_application/views/widgets/sevk_islemleri_radio_islemler.dart';
 import 'package:neden_sevk_application/views/widgets/sevk_islemleri_radio_sevk_personeller.dart';
+import 'package:neden_sevk_application/views/widgets/sevk_islemleri_radio_yes_or_no.dart';
 
 class SevkOlustur extends StatefulWidget {
   const SevkOlustur({super.key});
@@ -51,9 +53,9 @@ class _SevkOlusturState extends State<SevkOlustur> {
                 const SevkIslemlerBaslik(baslik: "TESLİM ALAN PERSONEL"),
                 const SevkIslemlerRadioSevkPersoneller(),
                 const SevkIslemlerBaslik(baslik: "İŞLEM"),
-                const SevkIslemlerRadioSevkPersoneller(),
+                const SevkIslemlerRadioIslemler(),
                 const SevkIslemlerBaslik(baslik: "E-İRSALİYE KESİLECEK Mİ?"),
-                const SevkIslemlerRadioSevkPersoneller(),
+                const SevkIslemlerRadioYesOrNo(),
                 StadiumElevatedButton(
                     yazi: "SEVK OLUŞTUR",
                     renk: NedenColors.lacivert,
