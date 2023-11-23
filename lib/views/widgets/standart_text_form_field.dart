@@ -10,6 +10,7 @@ class StandartTextFormField extends StatefulWidget {
   final String gizliTextCharacter;
   final bool gizlimiGosterGizle;
   TextEditingController textEditingController = TextEditingController();
+  TextInputType keyboardType = TextInputType.text;
 
   StandartTextFormField(
       {super.key,
@@ -17,7 +18,9 @@ class StandartTextFormField extends StatefulWidget {
       required this.gizliMiCharacter,
       required this.gizliTextCharacter,
       required this.textEditingController,
-      required this.gizlimiGosterGizle});
+      required this.gizlimiGosterGizle,
+      required this.keyboardType
+      });
 
   @override
   State<StandartTextFormField> createState() => _StandartTextFormFieldState();
@@ -37,6 +40,7 @@ class _StandartTextFormFieldState extends State<StandartTextFormField> {
           obscureText: widget.gizliMiCharacter,
           obscuringCharacter: widget.gizliTextCharacter,
           cursorColor: NedenColors.bal,
+          keyboardType: widget.keyboardType, 
           decoration: InputDecoration(
             suffixIconColor: NedenColors.lacivert,
               suffixIcon: widget.gizlimiGosterGizle

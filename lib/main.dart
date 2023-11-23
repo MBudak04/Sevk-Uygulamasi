@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neden_sevk_application/core/feature/remember_me.dart';
+import 'package:neden_sevk_application/views/pages/cuval_girisi.dart';
 import 'package:neden_sevk_application/views/pages/home_view.dart';
 import 'package:neden_sevk_application/views/pages/login_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -10,6 +11,7 @@ void main() async {
         routes: <String, WidgetBuilder>{
           "/HomeView": (BuildContext context) => const HomeView(),
           "/LoginView": (BuildContext context) => const LoginView(),
+          "/CuvalGirisView": (BuildContext context) => const CuvalGirisView(),
         },
         debugShowCheckedModeBanner: false,
         home: FutureBuilder<bool>(

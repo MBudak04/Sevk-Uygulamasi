@@ -5,17 +5,19 @@ import 'package:neden_sevk_application/core/services/http_services.dart';
 import 'package:neden_sevk_application/views/themes/colors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+// ignore: must_be_immutable
 class SevkIslemlerRadioFirmalar extends StatefulWidget {
+
   const SevkIslemlerRadioFirmalar({super.key});
 
   @override
   State<SevkIslemlerRadioFirmalar> createState() => _SevkIslemlerRadioState();
 }
-
 class _SevkIslemlerRadioState extends State<SevkIslemlerRadioFirmalar> {
+  String selectedIndex ="";
   List<String> list = [];
   List<String> searchList = [];
-  String selectedIndex = "";
+  
   TextEditingController controllerSear = TextEditingController();
   ApiServices apiServices = ApiServices();
 

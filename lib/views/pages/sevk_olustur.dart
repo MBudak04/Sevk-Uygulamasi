@@ -17,13 +17,8 @@ class SevkOlustur extends StatefulWidget {
 
 class _SevkOlusturState extends State<SevkOlustur> {
   bool option1 = false;
-  
 
-  @override
-  void initState() {
-    super.initState();
 
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +55,9 @@ class _SevkOlusturState extends State<SevkOlustur> {
                     yazi: "SEVK OLUŞTUR",
                     renk: NedenColors.lacivert,
                     font: NedenFonts.baslikBeyaz,
-                    onPressed: () {})
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/CuvalGirisView");
+                    })
               ],
             ),
           ),

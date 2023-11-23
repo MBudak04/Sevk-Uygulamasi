@@ -56,6 +56,7 @@ class _LoginViewState extends State<LoginView> {
               gizliMiCharacter: false,
               gizliTextCharacter: "*",
               gizlimiGosterGizle: false,
+              keyboardType: TextInputType.text,
             )),
             StandartTextFormField(
               textEditingController: _controllerS,
@@ -63,6 +64,7 @@ class _LoginViewState extends State<LoginView> {
               gizliMiCharacter: true,
               gizliTextCharacter: "*",
               gizlimiGosterGizle: true,
+              keyboardType: TextInputType.text,
             ),
             Center(
               child: Row(
@@ -126,7 +128,9 @@ class _LoginViewState extends State<LoginView> {
                                     gizliMiCharacter: false,
                                     gizliTextCharacter: "*",
                                     textEditingController: _controllerTel,
-                                    gizlimiGosterGizle: false),
+                                    gizlimiGosterGizle: false,
+                                    keyboardType: TextInputType.phone,
+                                    ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(top: 40.0),
