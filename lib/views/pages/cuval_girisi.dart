@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:neden_sevk_application/views/themes/colors.dart';
-import 'package:neden_sevk_application/views/themes/fonts.dart';
-import 'package:neden_sevk_application/views/widgets/sevk_islemleri_radio_firmalar.dart';
 import 'package:neden_sevk_application/views/widgets/standart_text_form_field.dart';
 
 class CuvalGirisView extends StatefulWidget {

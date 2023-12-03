@@ -1,6 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:neden_sevk_application/core/feature/database_helper.dart';
 import 'package:neden_sevk_application/views/pages/bekleyen_cuvallar.dart';
 import 'package:neden_sevk_application/views/pages/gecmis_sevkler.dart';
 import 'package:neden_sevk_application/views/pages/sevk_olustur.dart';
